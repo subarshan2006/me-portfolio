@@ -2,6 +2,15 @@
   border-top: 1px solid var(--gray-100);
 }
 
+.about .section-label {
+  font-size: 1rem;
+  letter-spacing: 5px;
+}
+
+.about .section-title {
+  font-size: clamp(2.75rem, 5vw, 4rem);
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
