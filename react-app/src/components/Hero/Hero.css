@@ -6,10 +6,10 @@
 /* Fixed video — stays in place while scrolling through hero height */
 .hero-video-wrapper {
   position: fixed;
-  top: var(--nav-height);
+  top: 0;
   left: 0;
   width: 100vw;
-  height: calc(100vh - var(--nav-height));
+  height: 100vh;
   z-index: 0;
   transition: opacity 0.3s ease;
 }
@@ -18,16 +18,16 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center top;
 }
 
 /* Overlay content — floating card centered on screen */
 .hero-overlay {
   position: fixed;
-  top: var(--nav-height);
+  top: 0;
   left: 0;
   width: 100%;
-  height: calc(100vh - var(--nav-height));
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;

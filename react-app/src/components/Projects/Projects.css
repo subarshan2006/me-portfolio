@@ -13,6 +13,7 @@
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  transition: background 0.3s var(--ease-out);
 }
 
 .project-header {
@@ -84,6 +85,24 @@
 .project-card:hover .project-link {
   color: var(--white);
   gap: 14px;
+}
+
+.project-card:hover {
+  background: var(--white);
+}
+
+.project-card:hover .project-year,
+.project-card:hover .project-number,
+.project-card:hover .project-title,
+.project-card:hover .project-desc,
+.project-card:hover .project-link,
+.project-card:hover .project-tech-tag {
+  color: var(--black);
+}
+
+.project-card:hover .project-tech-tag {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.12);
 }
 
 @media (max-width: 768px) {

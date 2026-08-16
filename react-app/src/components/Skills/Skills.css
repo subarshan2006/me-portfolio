@@ -11,6 +11,21 @@
 
 .skills-group {
   padding: 40px 32px;
+  transition: background 0.3s var(--ease-out);
+}
+
+.skills-group:hover {
+  background: var(--white);
+}
+
+.skills-group:hover .skills-group-title,
+.skills-group:hover .skills-tag {
+  color: var(--black);
+}
+
+.skills-group:hover .skills-tag {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.12);
 }
 
 .skills-group-title {
