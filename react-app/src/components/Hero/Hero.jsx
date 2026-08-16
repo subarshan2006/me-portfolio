@@ -90,7 +90,7 @@ function Hero() {
           </div>
           {/* Buttons + Scroll block */}
           <div className="hero-action-block">
-            {/* Button row */}
+            {/* Buttons + centered scroll line */}
             <div className="hero-actions">
               <a
                 href="#projects"
@@ -102,6 +102,15 @@ function Hero() {
               >
                 View Work
               </a>
+
+              {/* Scroll indicator centered between buttons */}
+              <div className="hero-scroll-hint">
+                <div className="hero-scroll-line">
+                  <div className="hero-scroll-dot"></div>
+                </div>
+                <span>SCROLL</span>
+              </div>
+
               <a
                 href="#contact"
                 className="hero-btn hero-btn--secondary"
@@ -112,14 +121,6 @@ function Hero() {
               >
                 Get in Touch
               </a>
-            </div>
-
-            {/* Scroll indicator */}
-            <div className="hero-scroll-hint">
-              <div className="hero-scroll-line">
-                <div className="hero-scroll-dot"></div>
-              </div>
-              <span>SCROLL</span>
             </div>
           </div>
         </div>
