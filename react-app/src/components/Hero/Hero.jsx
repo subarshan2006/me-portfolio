@@ -68,7 +68,7 @@ function Hero() {
           playsInline
           preload="auto"
         >
-          <source src="/video_optimized.mp4" type="video/mp4" />
+          <source src="/finalprofile_logo_removed_optimized.mp4" type="video/mp4" />
         </video>
       </div>
 
