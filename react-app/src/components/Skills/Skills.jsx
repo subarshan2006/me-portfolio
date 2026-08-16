@@ -4,15 +4,27 @@ import './Skills.css';
 const skills = [
   {
     category: 'Frontend',
-    items: ['React', 'JavaScript', 'TypeScript', 'HTML/CSS', 'Next.js', 'Redux'],
+    items: ['React.js', 'HTML5', 'CSS3', 'JavaScript (ES6+)', 'Responsive Design'],
   },
   {
     category: 'Backend',
-    items: ['Node.js', 'Express', 'Python', 'REST APIs', 'GraphQL', 'PostgreSQL'],
+    items: ['Node.js', 'Express.js', 'REST API Design', 'JWT Authentication'],
   },
   {
-    category: 'DevOps & Tools',
-    items: ['Git', 'Docker', 'AWS', 'CI/CD', 'Linux', 'Figma'],
+    category: 'Database',
+    items: ['MongoDB', 'Mongoose ODM'],
+  },
+  {
+    category: 'Tools',
+    items: ['Git', 'GitHub', 'Vercel', 'Render', 'Postman', 'VS Code'],
+  },
+  {
+    category: 'Payments',
+    items: ['Razorpay Integration'],
+  },
+  {
+    category: 'Other',
+    items: ['C++', 'Java', 'Problem Solving'],
   },
 ];
 
