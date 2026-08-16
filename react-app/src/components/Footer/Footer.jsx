@@ -11,9 +11,9 @@ function Footer() {
           © {year} Subarshan. All rights reserved.
         </span>
         <div className="footer-links">
-          <a href="https://github.com/subarshan" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://linkedin.com/in/subarshan" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="mailto:hello@subarshan.dev">Email</a>
+          <a href="https://github.com/subarshan2006" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://linkedin.com/in/thesubarshan" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:subarshan195@gmail.com">Email</a>
         </div>
       </div>
     </footer>
