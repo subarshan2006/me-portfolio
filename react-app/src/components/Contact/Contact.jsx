@@ -31,29 +31,7 @@ function Contact() {
                 </svg>
               </div>
               <span className="contact-card-label">Email</span>
-              <span className="contact-card-value">subarshan195@gmail.com</span>
             </a>
-
-            <a href="tel:+918610669887" className="contact-card floating-card">
-              <div className="contact-card-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M22 16.92V19A2 2 0 0 1 20 21C10.61 21 3 13.39 3 4A2 2 0 0 1 5 2H7.18A2 2 0 0 1 9.17 3.56L9.87 6.44A2 2 0 0 1 9.52 8.46L8.26 9.72C9.72 12.62 11.38 14.28 14.28 15.74L15.54 14.48A2 2 0 0 1 17.56 14.13L20.44 14.83A2 2 0 0 1 22 16.92Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              <span className="contact-card-label">Phone</span>
-              <span className="contact-card-value">+91 8610669887</span>
-            </a>
-
-            <div className="contact-card floating-card">
-              <div className="contact-card-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 22C12 22 20 15.5 20 10C20 5.58 16.42 2 12 2C7.58 2 4 5.58 4 10C4 15.5 12 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
-                  <circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="1.5"/>
-                </svg>
-              </div>
-              <span className="contact-card-label">Location</span>
-              <span className="contact-card-value">Coimbatore, India</span>
-            </div>
 
             <a href="https://github.com/subarshan2006" target="_blank" rel="noopener noreferrer" className="contact-card floating-card">
               <div className="contact-card-icon">
@@ -62,7 +40,6 @@ function Contact() {
                 </svg>
               </div>
               <span className="contact-card-label">GitHub</span>
-              <span className="contact-card-value">@subarshan2006</span>
             </a>
 
             <a href="https://linkedin.com/in/thesubarshan" target="_blank" rel="noopener noreferrer" className="contact-card floating-card">
@@ -73,7 +50,6 @@ function Contact() {
                 </svg>
               </div>
               <span className="contact-card-label">LinkedIn</span>
-              <span className="contact-card-value">Subarshan</span>
             </a>
           </div>
 
