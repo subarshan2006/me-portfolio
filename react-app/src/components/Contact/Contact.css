@@ -2,6 +2,11 @@
   border-top: 1px solid var(--gray-100);
 }
 
+.contact .section-label {
+  font-size: 1rem;
+  letter-spacing: 5px;
+}
+
 .contact-inner {
   text-align: center;
   max-width: 700px;
@@ -10,7 +15,7 @@
 
 .contact-heading {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-size: clamp(2.75rem, 5vw, 4rem);
   font-weight: 800;
   line-height: 1.2;
   margin: 0 0 24px;

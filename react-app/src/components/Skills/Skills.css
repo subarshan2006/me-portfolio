@@ -2,6 +2,15 @@
   border-top: 1px solid var(--gray-100);
 }
 
+.skills .section-label {
+  font-size: 1rem;
+  letter-spacing: 5px;
+}
+
+.skills .section-title {
+  font-size: clamp(2.75rem, 5vw, 4rem);
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
