@@ -1,0 +1,167 @@
+.resume {
+  border-top: 1px solid var(--gray-100);
+}
+
+.resume .section-label {
+  font-size: 1rem;
+  letter-spacing: 5px;
+}
+
+.resume .section-title {
+  font-size: clamp(2.75rem, 5vw, 4rem);
+}
+
+.resume-block {
+  margin-bottom: 64px;
+}
+
+.resume-block-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.5px;
+  margin: 0 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.resume-block-index {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gray-400);
+  letter-spacing: 1px;
+}
+
+/* Timeline */
+.resume-timeline {
+  position: relative;
+  padding-left: 32px;
+}
+
+.resume-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 8px;
+  width: 1px;
+  background: var(--gray-200);
+}
+
+.resume-timeline-item {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.resume-timeline-dot {
+  position: absolute;
+  left: -32px;
+  top: 28px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 3px solid var(--black);
+  box-shadow: 0 0 0 1px var(--gray-300);
+}
+
+.resume-timeline-card {
+  padding: 28px 32px;
+}
+
+.resume-item-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.resume-item-role {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 4px;
+}
+
+.resume-item-company {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+}
+
+.resume-item-date {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--gray-400);
+  white-space: nowrap;
+  border: 1px solid var(--gray-200);
+  border-radius: 100px;
+  padding: 4px 12px;
+}
+
+.resume-item-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.resume-item-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--gray-500);
+}
+
+.resume-item-list li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--white);
+}
+
+.resume-item-detail {
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gray-400);
+}
+
+/* Two-column block grid */
+.resume-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.resume-mini-card {
+  padding: 24px 28px;
+  margin-bottom: 16px;
+}
+
+.resume-mini-card .resume-item-head {
+  margin-bottom: 8px;
+}
+
+.resume-list-card {
+  padding: 28px 32px;
+}
+
+@media (max-width: 768px) {
+  .resume-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
