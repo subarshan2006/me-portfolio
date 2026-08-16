@@ -18,15 +18,14 @@ function About() {
               Crafting Digital Experiences<br />with Purpose & Precision
             </h2>
             <p className="about-text">
-              I'm a passionate Software Engineer who thrives on turning complex problems 
-              into clean, elegant solutions. With a deep love for building things from 
-              scratch, I specialize in full-stack development, creating seamless user 
-              experiences backed by robust, scalable architectures.
+              Motivated Full Stack Developer with hands-on experience building and
+              deploying production web applications using the MERN stack. Completed
+              an internship at Amypo Technology and delivered 5 real-world projects
+              — three of which are live websites accessible in Google Chrome.
             </p>
             <p className="about-text">
-              My approach blends technical expertise with creative thinking — because 
-              great software isn't just functional, it's an experience. I believe in 
-              writing code that's as beautiful to read as the interfaces it powers.
+              Comfortable across the full development lifecycle — from UI design
+              and REST API development to database design and deployment.
             </p>
           </div>
 
