@@ -48,6 +48,17 @@
   gap: 12px;
   text-decoration: none;
   color: inherit;
+  transition: background 0.3s var(--ease-out);
+}
+
+.contact-card:hover {
+  background: var(--white);
+}
+
+.contact-card:hover .contact-card-icon,
+.contact-card:hover .contact-card-label,
+.contact-card:hover .contact-card-value {
+  color: var(--black);
 }
 
 .contact-card-icon {
@@ -56,7 +67,7 @@
 }
 
 .contact-card:hover .contact-card-icon {
-  color: var(--white);
+  color: var(--black);
 }
 
 .contact-card-label {
