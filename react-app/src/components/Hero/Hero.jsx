@@ -88,35 +88,39 @@ function Hero() {
           <div className="hero-tagline">
             Building elegant solutions with modern technology
           </div>
-          <div className="hero-actions">
-            <a
-              href="#projects"
-              className="hero-btn hero-btn--primary"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              View Work
-            </a>
-            <a
-              href="#contact"
-              className="hero-btn hero-btn--secondary"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              Get in Touch
-            </a>
-          </div>
-        </div>
+          {/* Buttons + Scroll block */}
+          <div className="hero-action-block">
+            {/* Button row */}
+            <div className="hero-actions">
+              <a
+                href="#projects"
+                className="hero-btn hero-btn--primary"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                View Work
+              </a>
+              <a
+                href="#contact"
+                className="hero-btn hero-btn--secondary"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                Get in Touch
+              </a>
+            </div>
 
-        {/* Scroll indicator */}
-        <div className="hero-scroll-hint">
-          <span>Scroll</span>
-          <div className="hero-scroll-line">
-            <div className="hero-scroll-dot"></div>
+            {/* Scroll indicator */}
+            <div className="hero-scroll-hint">
+              <div className="hero-scroll-line">
+                <div className="hero-scroll-dot"></div>
+              </div>
+              <span>SCROLL</span>
+            </div>
           </div>
         </div>
       </div>

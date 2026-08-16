@@ -31,18 +31,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  padding-bottom: 18vh;
   z-index: 1;
   pointer-events: none;
 }
 
 .hero-card {
-  padding: 48px 56px;
+  padding: 28px 36px;
   text-align: center;
   pointer-events: auto;
   background: rgba(0, 0, 0, 0.55);
   border-color: var(--gray-200);
-  max-width: 560px;
+  max-width: 460px;
 }
 
 .hero-card:hover {
@@ -85,10 +86,60 @@
   line-height: 1.6;
 }
 
+/* Action block: scroll indicator + buttons stacked */
+.hero-action-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 28px;
+  gap: 0;
+}
+
+/* Scroll indicator — centered above buttons */
+.hero-scroll-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 0;
+}
+
+.hero-scroll-hint span {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gray-400);
+}
+
+.hero-scroll-line {
+  width: 1px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-scroll-dot {
+  width: 1px;
+  height: 10px;
+  background: var(--white);
+  position: absolute;
+  top: -10px;
+  animation: scrollDot 1.8s var(--ease-in-out) infinite;
+}
+
+@keyframes scrollDot {
+  0%   { top: -10px; opacity: 0; }
+  20%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { top: 30px; opacity: 0; }
+}
+
+/* Button row */
 .hero-actions {
   display: flex;
   gap: 16px;
-  margin-top: 32px;
   justify-content: center;
 }
 
@@ -108,6 +159,7 @@
 .hero-btn--primary {
   background: var(--white);
   color: var(--black);
+  animation: slideFromLeft 0.8s 0.3s var(--ease-out) both;
 }
 
 .hero-btn--primary:hover {
@@ -118,7 +170,8 @@
 .hero-btn--secondary {
   background: transparent;
   color: var(--white);
-  border: 1px solid var(--gray-300);
+  border: 1px solid var(--white);
+  animation: slideFromRight 0.8s 0.45s var(--ease-out) both;
 }
 
 .hero-btn--secondary:hover {
@@ -126,46 +179,14 @@
   transform: scale(1.05);
 }
 
-/* Scroll indicator */
-.hero-scroll-hint {
-  position: absolute;
-  bottom: calc(var(--nav-height) + 40px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  pointer-events: none;
+@keyframes slideFromLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
-.hero-scroll-hint span {
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--gray-400);
-}
-
-.hero-scroll-line {
-  width: 1px;
-  height: 50px;
-  background: var(--gray-200);
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-scroll-dot {
-  width: 1px;
-  height: 16px;
-  background: var(--white);
-  position: absolute;
-  top: -16px;
-  animation: scrollDot 2s var(--ease-in-out) infinite;
-}
-
-@keyframes scrollDot {
-  0% { top: -16px; }
-  50% { top: 50px; }
-  100% { top: -16px; }
+@keyframes slideFromRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
 @media (max-width: 768px) {
