@@ -7,15 +7,11 @@ function Hero() {
   const overlayRef = useRef(null);
 
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [reduceMotion] = useState(
-    () =>
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  );
 
   useEffect(() => {
+    const video = videoRef.current;
     const container = containerRef.current;
-    if (!container) return;
+    if (!video || !container) return;
 
     let ticking = false;
 
@@ -30,14 +26,28 @@ function Hero() {
         const maxScroll = containerHeight - window.innerHeight;
         const fraction = Math.min(1, Math.max(0, scrolled / maxScroll));
 
+        if (video.duration) {
+          video.currentTime = video.duration * fraction;
+        }
+
         setScrollProgress(fraction);
         ticking = false;
       });
     }
 
-    window.addEventListener('scroll', onScroll, { passive: true });
+    function onMetadataLoaded() {
+      video.currentTime = 0;
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
+
+    video.addEventListener('loadedmetadata', onMetadataLoaded);
+
+    if (video.readyState >= 1) {
+      onMetadataLoaded();
+    }
 
     return () => {
+      video.removeEventListener('loadedmetadata', onMetadataLoaded);
       window.removeEventListener('scroll', onScroll);
     };
   }, []);
@@ -56,20 +66,9 @@ function Hero() {
           className="hero-video"
           muted
           playsInline
-          autoPlay={!reduceMotion}
-          loop={!reduceMotion}
           preload="auto"
-          poster={`${import.meta.env.BASE_URL}hero-poster.jpg`}
         >
-          <source
-            media="(max-width: 768px)"
-            src={`${import.meta.env.BASE_URL}finalprofile_mobile_540p.mp4`}
-            type="video/mp4"
-          />
-          <source
-            src={`${import.meta.env.BASE_URL}finalprofile_logo_removed_optimized.mp4`}
-            type="video/mp4"
-          />
+          <source src={`${import.meta.env.BASE_URL}finalprofile_logo_removed_optimized.mp4`} type="video/mp4" />
         </video>
       </div>
 
