@@ -4,6 +4,11 @@ import './Navbar.css';
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  function closeMenu() {
+    setMenuOpen(false);
+  }
 
   useEffect(() => {
     const sections = ['home', 'about', 'skills', 'projects', 'resume', 'contact'];
@@ -46,12 +51,17 @@ function Navbar() {
   ];
 
   return (
-    <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
+    <nav
+      className={`navbar ${scrolled ? 'navbar--scrolled' : ''} ${menuOpen ? 'navbar--open' : ''}`}
+    >
       <div className="navbar-inner">
         <a
           href="#home"
           className="navbar-logo"
-          onClick={(e) => handleClick(e, 'home')}
+          onClick={(e) => {
+            handleClick(e, 'home');
+            closeMenu();
+          }}
         >
           S<span className="navbar-logo-dot">.</span>
         </a>
@@ -70,10 +80,50 @@ function Navbar() {
           ))}
         </ul>
 
+        <div className="navbar-actions">
+          <a
+            href="#contact"
+            className="navbar-cta"
+            onClick={(e) => handleClick(e, 'contact')}
+          >
+            Let's Talk
+          </a>
+
+          <button
+            type="button"
+            className="navbar-toggle"
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <span className="navbar-toggle-bar"></span>
+            <span className="navbar-toggle-bar"></span>
+            <span className="navbar-toggle-bar"></span>
+          </button>
+        </div>
+      </div>
+
+      <div className={`navbar-mobile ${menuOpen ? 'is-open' : ''}`}>
+        {links.map((link) => (
+          <a
+            key={link.id}
+            href={`#${link.id}`}
+            className={`navbar-mobile-link ${activeSection === link.id ? 'navbar-mobile-link--active' : ''}`}
+            onClick={(e) => {
+              handleClick(e, link.id);
+              closeMenu();
+            }}
+          >
+            {link.label}
+          </a>
+        ))}
         <a
           href="#contact"
-          className="navbar-cta"
-          onClick={(e) => handleClick(e, 'contact')}
+          className="navbar-mobile-cta"
+          onClick={(e) => {
+            handleClick(e, 'contact');
+            closeMenu();
+          }}
         >
           Let's Talk
         </a>
