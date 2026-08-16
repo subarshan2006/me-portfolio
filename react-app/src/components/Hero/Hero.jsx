@@ -83,11 +83,9 @@ function Hero() {
       >
         <div className="hero-card floating-card">
           <span className="hero-greeting">Hello, I'm</span>
-          <h1 className="hero-name">Subarshan</h1>
-          <p className="hero-role">Software Engineer</p>
-          <div className="hero-tagline">
-            Building elegant solutions with modern technology
-          </div>
+          <h1 className="hero-name">Subarshan R B</h1>
+          <p className="hero-role">Full Stack Developer</p>
+          <div className="hero-tagline">(MERN Stack) · 3rd Year B.Tech IT</div>
           {/* Buttons + Scroll block */}
           <div className="hero-action-block">
             {/* Buttons + centered scroll line */}
