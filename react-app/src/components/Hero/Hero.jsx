@@ -7,11 +7,20 @@ function Hero() {
   const overlayRef = useRef(null);
 
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
     const container = containerRef.current;
     if (!video || !container) return;
+
+    const mobile = window.matchMedia('(max-width: 768px)').matches;
+    setIsMobile(mobile);
+
+    if (mobile) {
+      video.play().catch(() => {});
+      return;
+    }
 
     let ticking = false;
 
@@ -52,27 +61,35 @@ function Hero() {
     };
   }, []);
 
-  // Compute overlay styles based on scroll
-  const overlayOpacity = Math.max(0, 1 - scrollProgress * 3);
-  const overlayTranslate = scrollProgress * 80;
-  const videoOpacity = scrollProgress > 0.85 ? 1 - (scrollProgress - 0.85) / 0.15 : 1;
+  const overlayOpacity = isMobile ? 1 : Math.max(0, 1 - scrollProgress * 3);
+  const overlayTranslate = isMobile ? 0 : scrollProgress * 80;
+  const videoOpacity = isMobile ? 1 : (scrollProgress > 0.85 ? 1 - (scrollProgress - 0.85) / 0.15 : 1);
 
   return (
     <section id="home" className="hero" ref={containerRef}>
-      {/* Fixed video background */}
       <div className="hero-video-wrapper" style={{ opacity: videoOpacity }}>
         <video
           ref={videoRef}
           className="hero-video"
           muted
           playsInline
+          loop={isMobile}
+          autoPlay={isMobile}
           preload="auto"
+          poster={`${import.meta.env.BASE_URL}hero-poster.jpg`}
         >
-          <source src={`${import.meta.env.BASE_URL}finalprofile_logo_removed_optimized.mp4`} type="video/mp4" />
+          <source
+            media="(max-width: 768px)"
+            src={`${import.meta.env.BASE_URL}finalprofile_mobile_540p.mp4`}
+            type="video/mp4"
+          />
+          <source
+            src={`${import.meta.env.BASE_URL}finalprofile_logo_removed_optimized.mp4`}
+            type="video/mp4"
+          />
         </video>
       </div>
 
-      {/* Floating hero content card */}
       <div
         className="hero-overlay"
         ref={overlayRef}
@@ -85,9 +102,7 @@ function Hero() {
           <span className="hero-greeting">Hello, I'm</span>
           <h1 className="hero-name">SUBARSHAN</h1>
           <p className="hero-role">SOFTWARE DEVELOPER</p>
-          {/* Buttons + Scroll block */}
           <div className="hero-action-block">
-            {/* Buttons + centered scroll line */}
             <div className="hero-actions">
               <a
                 href="#projects"
@@ -100,7 +115,6 @@ function Hero() {
                 View Work
               </a>
 
-              {/* Scroll indicator centered between buttons */}
               <div className="hero-scroll-hint">
                 <div className="hero-scroll-line">
                   <div className="hero-scroll-dot"></div>
