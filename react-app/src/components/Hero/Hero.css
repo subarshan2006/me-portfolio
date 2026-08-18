@@ -195,8 +195,14 @@
     height: 150vh;
   }
 
+  .hero-overlay {
+    justify-content: center;
+    padding-top: 15vh;
+    padding-bottom: 0;
+  }
+
   .hero-card {
-    padding: 30px 64px;
+    padding: 20px 24px;
     margin: 0 20px;
     width: fit-content;
     max-width: calc(100% - 40px);
